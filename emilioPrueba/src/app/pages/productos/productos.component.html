@@ -1,0 +1,36 @@
+<div class="container">
+<h2>Tabla de Productos</h2>
+
+<input
+  type="text"
+  placeholder="Buscar..."
+  [(ngModel)]="searchTerm"
+  (input)="onSearchChange()"
+  class="mb-2"
+/>
+
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>categoria</th>
+      <th>cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of paginatedProductos">
+      <td>{{ producto.nombre || '-' }}</td>
+      <td>{{ producto.precio || '-' }}</td>
+      <td>{{ producto.categoria || '-' }}</td>
+      <td>{{ producto.cantidad || '-' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 10px;">
+  <button (click)="changePage(page - 1)" [disabled]="page === 1">Anterior</button>
+  <span>Página {{ page }} de {{ totalPages }}</span>
+  <button (click)="changePage(page + 1)" [disabled]="page >= totalPages">Siguiente</button>
+</div>
+</div>

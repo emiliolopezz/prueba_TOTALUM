@@ -1,0 +1,40 @@
+<div class="container">
+<h2>Tabla de Pedidos</h2>
+
+<input
+  type="text"
+  placeholder="Buscar por Cliente"
+  [(ngModel)]="searchTerm"
+  (input)="onSearchChange()"
+  class="mb-2"
+/>
+
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>numero</th>
+      <th>importe</th>
+      <th>importe impuestos</th>
+      <th>cantidad productos</th>
+      <th>fecha</th>
+      <th>cliente</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pedido of paginatedPedidos">
+      <td>{{ pedido.numero_pedido || '-' }}</td>
+      <td>{{ pedido.importe || '-' }}</td>
+      <td>{{ pedido.importe_impuestos || '-' }}</td>
+      <td>{{ pedido.cantidad_productos || '-' }}</td>
+      <td>{{ pedido.fecha || '-' }}</td>
+      <td>{{ pedido.nombre_cliente || '-' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 10px;">
+  <button (click)="changePage(page - 1)" [disabled]="page === 1">Anterior</button>
+  <span>Página {{ page }} de {{ totalPages }}</span>
+  <button (click)="changePage(page + 1)" [disabled]="page >= totalPages">Siguiente</button>
+</div>
+</div>

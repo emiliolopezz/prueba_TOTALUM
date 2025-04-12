@@ -1,0 +1,85 @@
+/* Fondo general */
+body {
+  background-color: #ecf0f1;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  /* Contenedor central */
+  .container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  }
+  
+  /* Título */
+  h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  }
+  
+  /* Input buscador */
+  input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  }
+  
+  /* Tabla */
+  table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  text-align: left;
+  }
+  
+  thead {
+  background-color: #f2f2f2;
+  }
+  
+  th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+  font-weight: bold;
+  }
+  
+  /* Botones */
+  button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+  }
+  
+  button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  }
+  
+  button:hover:not(:disabled) {
+  background-color: #357ABD;
+  }
+  
+  /* Texto de paginación */
+  div span {
+  margin: 0 10px;
+  }
+  

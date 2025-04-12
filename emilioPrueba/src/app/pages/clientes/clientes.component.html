@@ -1,0 +1,36 @@
+<div class="container">
+<h2>Tabla de Clientes</h2>
+
+<input
+  type="text"
+  placeholder="Buscar por nombre o correo..."
+  [(ngModel)]="searchTerm"
+  (input)="onSearchChange()"
+  class="mb-2"
+/>
+
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Teléfono</th>
+      <th>fecha nacimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of paginatedClientes">
+      <td>{{ cliente.nombre }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>{{ cliente.telefono || '-' }}</td>
+      <td>{{ cliente.fecha_nacimiento || '-' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 10px;">
+  <button (click)="changePage(page - 1)" [disabled]="page === 1">Anterior</button>
+  <span>Página {{ page }} de {{ totalPages }}</span>
+  <button (click)="changePage(page + 1)" [disabled]="page >= totalPages">Siguiente</button>
+</div>
+</div>
